@@ -38,7 +38,7 @@ export default function PostDetail({ params }: { params: { slug: string } }) {
           <p className="text-sm text-gray-500 uppercase font-medium mb-4">
             {post.category} - {post.date}
           </p>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{post.title}</h1>
+          <h1 className="lg:text-4xl md:text-4xl text-2xl font-bold text-gray-900 mb-4">{post.title}</h1>
           <p className="text-md text-gray-600 italic mb-6">By {post.author}</p>
           <p className="text-lg text-gray-700 mb-6">{post.description}</p>
 
