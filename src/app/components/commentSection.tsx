@@ -25,8 +25,8 @@ export default function CommentSection(){
       onChange={(e)=>setComment(e.target.value)} className="block w-[100%] lg:h-[60px] h-[40px] rounded-sm pl-[10px] outline-none"/>
       </div>
       <button onClick={handleAddComment} className="lg:w-[200px] bg-[#E4599C] w-[150px] hover:bg-pink-600 text-white lg:text-[20px] h-[50px] rounded-sm border-none outline-none">Add Comment</button>
-      {comments.map((e)=>(
-        <div className="bg-yellow-100 rounded-sm p-[2%] mt-[2%]">
+      {comments.map((e,index)=>(
+        <div className="bg-yellow-100 rounded-sm p-[2%] mt-[2%]"key={index}>
           <p className="font-bold my-[8px] text-[18px]">{e.name}</p>
           <p>{e.comment}</p>
         </div>

@@ -11,7 +11,7 @@ export default function Contact(){
             <div className="grid lg:grid-cols-2 items-center gap-14 sm:p-8 p-4 font-[sans-serif]">
                 <div>
                     <h1 className="text-4xl font-bold text-white">Get in Touch</h1>
-                    <p className="text-sm text-gray-300 mt-4 leading-relaxed">Have some big idea or brand to develop and need help? Then reach out we'd love to hear about your project  and provide help.</p>
+                    <p className="text-sm text-gray-300 mt-4 leading-relaxed">Have some big idea or brand to develop and need help? Then reach out we&lsquo;d love to hear about your project  and provide help.</p>
 
                     <ul className="mt-12 space-y-8">
                         <li className="flex items-center">
@@ -79,7 +79,7 @@ export default function Contact(){
                 </div>
 
                 <div className="bg-gray-100 p-6 rounded-lg">
-                    <p className="text-sm font-semibold text-gray-800">I'm interested in...</p>
+                    <p className="text-sm font-semibold text-gray-800">I&lsquo;m interested in...</p>
 
                     <div className="space-y-4 max-lg:mt-4">
       <button

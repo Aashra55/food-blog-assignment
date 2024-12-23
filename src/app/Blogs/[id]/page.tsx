@@ -94,8 +94,8 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
             lg:mx-[0px] md:mx-[0px] mx-[1%]'>
             <p className=' lg:text-3xl md:text-3xl text-xl font-bold text-gray-400  mt-[10px]'>Ingredients</p>
             <ul className='pl-[2%] mt-[10px] lg:mt-[20px]'>
-            {blog.recipe.ingredients.map((e:string[])=>(
-              <li className='list-disc '>{e}</li>
+            {blog.recipe.ingredients.map((e:string[],index:number)=>(
+              <li className='list-disc ' key={index}>{e}</li>
             ))}
             </ul>
             </div>
@@ -103,8 +103,8 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
             lg:mx-[0px] md:mx-[0px] mx-[1%]'>
             <p className=' lg:text-3xl md:text-3xl text-xl font-bold text-gray-400  mt-[10px]'>Steps</p>
             <ul  className='pl-[2%] mt-[10px] lg:mt-[20px]'>
-              {blog.recipe.steps.map((e:string[])=>(
-                <li className='list-disc '>{e}</li>
+              {blog.recipe.steps.map((e:string[],index:number)=>(
+                <li className='list-disc ' key={index}>{e}</li>
               ))}
             </ul>
             </div>
@@ -117,8 +117,8 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
         <div className='bg-gray-100 p-[2%] pl-[4%] rounded-sm lg:rounded-xl lg:mx-[0px] md:mx-[0px] mx-[3%]
         md:rounded-xl shadow-lg lg:ml-[4%] md:ml-[4%] lg:mr-[4%] md:mr-[4%]'>
           <ul>
-          {blog.servingSuggestions.map((e:string[])=>(
-            <li className='list-disc'>{e}</li>
+          {blog.servingSuggestions.map((e:string[],index:number)=>(
+            <li className='list-disc' key={index}>{e}</li>
           ))}
           </ul>
         </div>
@@ -128,8 +128,8 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
         <div className='bg-gray-100 p-[2%] pl-[4%] rounded-sm lg:rounded-xl md:rounded-xl lg:mx-[0px] md:mx-[0px] mx-[3%]
         shadow-lg lg:ml-[4%] md:ml-[4%] lg:mr-[4%] md:mr-[4%]'>
           <ul>
-          {blog.tips.map((e:string[])=>(
-            <li className='list-disc'>{e}</li>
+          {blog.tips.map((e:string[],index:number)=>(
+            <li className='list-disc' key={index}>{e}</li>
           ))}
           </ul>
         </div>
@@ -139,8 +139,8 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
             <p className='text-gray-400 font-bold lg:text-4xl md:text-4xl text-[22px]'>FAQs</p>
           </div>
         </div>
-        {blog.faq.map((e:any)=>(
-                  <div className=' p-[2%] pt-[0px] pb-[0px] lg:ml-[2%] md:ml-[2%] lg:mr-[2%] md:mr-[2%]'>
+        {blog.faq.map((e:any,index:number)=>(
+                  <div key={index} className=' p-[2%] pt-[0px] pb-[0px] lg:ml-[2%] md:ml-[2%] lg:mr-[2%] md:mr-[2%]'>
                   <div className='bg-gray-100 p-[2%] w-auto rounded-sm lg:rounded-xl md:rounded-xl flex items-center gap-[10px]'>
                   <FontAwesomeIcon icon={faQuestionCircle} className='w-[20px] lg:w-[25px] md:w-[25px] text-gray-400'/>
                   <p>{e.question}</p>
