@@ -37,7 +37,7 @@ export default function Recipes ({params}:{params:{item:string}}){
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-6 grid-cols-1">
             {/* Ingredients Section */}
             <div>
               <h2 className="text-2xl font-bold mb-3 text-teal-600">Ingredients</h2>
