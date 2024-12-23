@@ -22,7 +22,7 @@ export default function ClientPostActions({ post }: { post: any }) {
     <div className="mt-6 mb-6 text-center">
       <button
         onClick={handleShare}
-        className="px-8 py-3 bg-pink-500 text-white rounded-lg hover:bg-blue-700 transition duration-300"
+        className="px-8 py-3 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition duration-300"
       >
         Share This Post
       </button>
