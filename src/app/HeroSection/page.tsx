@@ -6,7 +6,7 @@ export function Cards() {
   
   return (
     <main className="py-10 lg:px-6 px-2">
-      <h2 className="text-center lg:text-[40px] text-[20px] font-bold text-gray-800 lg:mb-6">Featured Blogs</h2>
+      <h2 className="text-center lg:text-[40px] text-[24px] font-bold text-gray-800 lg:mb-6">Featured Blogs</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {posts.map((post, index) => (
           <div key={index} className="post-card w-full p-4 hover:shadow-2xl border-[2px] rounded-sm">
