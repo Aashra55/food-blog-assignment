@@ -32,7 +32,7 @@ const BlogListPage = () => {
             <div className="p-6 flex flex-col justify-between w-full">
               <div>
                 {/* Title and Description */}
-                <h2 className="text-3xl font-semibold text-gray-800 leading-[60px]">{blog.title}</h2>
+                <h2 className="lg:text-3xl md:text-3xl text-2xl font-semibold text-gray-800 lg:leading-[60px] md:leading-[60px]">{blog.title}</h2>
                 <p className="text-lg text-pink-600 font-bold">{blog.tagline}</p>
                 <p className="mt-2 text-gray-600 text-sm line-clamp-4">
                   {blog.description}
@@ -40,7 +40,7 @@ const BlogListPage = () => {
               </div>
 
               {/* Ratings, Views, Comments, and Button */}
-              <div className="mt-4 flex justify-between items-center text-sm text-gray-500 space-x-4">
+              <div className="mt-4 flex lg:flex-row md:flex-row flex-col justify-between lg:items-center md:items-center text-sm text-gray-500 lg:space-x-4 md:space-x-4 lg:space-y-0 md:space-y-0 space-y-4">
                 <div className="flex flex-col text-gray-500 space-y-2">
                   <span>⭐ {blog.rating}</span>
                   <span>👁 {blog.views} Views</span>
