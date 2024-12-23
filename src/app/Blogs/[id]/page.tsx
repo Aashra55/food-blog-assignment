@@ -3,6 +3,7 @@ import { faStar,faStarHalfAlt, faClock, faUtensils, faQuestionCircle } from '@fo
 import { blogs, FAQ } from '../cards';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import CommentSection from '@/app/components/commentSection';
 
 export async function generateStaticParams() {
   return blogs.map((e) => ({
@@ -66,19 +67,19 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
         <div className='text-gray-400 font-bold lg:text-2xl text-[20px] mt-[25px]'>Nutritions</div>
         <div className=' mt-[15px] flex lg:gap-[50px] gap-[25px] text-gray-400'>
             <div className='flex flex-col gap-[7px] items-center'>
-                <p className='text-yellow-400 font-bold'>Calories</p>
+                <p className='text-pink-400 font-bold'>Calories</p>
                 <p className='text-[14px]'>{blog.nutrition.calories}</p>
             </div>
             <div className='flex flex-col gap-[7px] items-center'>
-                <p className='text-yellow-400 font-bold'>Proteins</p>
+                <p className='text-pink-400 font-bold'>Proteins</p>
                 <p className='text-[14px]'>{blog.nutrition.protein}</p>
             </div>
             <div className='flex flex-col gap-[7px] items-center'>
-                <p className='text-yellow-400 font-bold'>Carbs</p>
+                <p className='text-pink-400 font-bold'>Carbs</p>
                 <p className='text-[14px]'>{blog.nutrition.carbs}</p>
             </div>
             <div className='flex flex-col gap-[7px] items-center'>
-                <p className='text-yellow-400 font-bold'>Fats</p>
+                <p className='text-pink-400 font-bold'>Fats</p>
                 <p className='text-[14px]'>{blog.nutrition.fats}</p>
             </div>
         </div>
@@ -89,7 +90,8 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
         <div className='p-[2%] lg:pl-[4%] md:pl-[4%] lg:pr-[4%] md:pr-[4%] flex flex-col gap-[20px]'>
             <p className=' lg:text-5xl md:text-5xl text-3xl font-bold text-pink-600 mainName mt-[10px]'>Recipe</p>
             <div className='flex lg:flex-row md:flex-row flex-col w-full gap-[20px] lg:gap-[90px] md:gap-[70px]'>
-            <div className='bg-gray-100 p-[2%] pl-[4%] rounded-sm lg:rounded-xl md:rounded-xl lg:w-[50%] md:w-[50%] shadow-lg'>
+            <div className='bg-gray-100 p-[2%] pl-[4%] rounded-sm lg:rounded-xl md:rounded-xl lg:w-[50%] md:w-[50%] shadow-lg
+            lg:mx-[0px] md:mx-[0px] mx-[1%]'>
             <p className=' lg:text-3xl md:text-3xl text-xl font-bold text-gray-400  mt-[10px]'>Ingredients</p>
             <ul className='pl-[2%] mt-[10px] lg:mt-[20px]'>
             {blog.recipe.ingredients.map((e:string[])=>(
@@ -97,10 +99,11 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
             ))}
             </ul>
             </div>
-            <div className='bg-gray-100 p-[2%] pl-[4%] rounded-sm lg:rounded-xl md:rounded-xl lg:w-[50%] md:w-[50%] shadow-lg'>
+            <div className='bg-gray-100 p-[2%] pl-[4%] rounded-sm lg:rounded-xl md:rounded-xl lg:w-[50%] md:w-[50%] shadow-lg
+            lg:mx-[0px] md:mx-[0px] mx-[1%]'>
             <p className=' lg:text-3xl md:text-3xl text-xl font-bold text-gray-400  mt-[10px]'>Steps</p>
             <ul  className='pl-[2%] mt-[10px] lg:mt-[20px]'>
-              {blog.recipe.ingredients.map((e:string[])=>(
+              {blog.recipe.steps.map((e:string[])=>(
                 <li className='list-disc '>{e}</li>
               ))}
             </ul>
@@ -108,10 +111,11 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
             </div>
         </div>
         <div className='flex gap-[15px] p-[2%] items-center lg:pl-[4%] md:pl-[4%] lg:pr-[4%] md:pr-[4%]'>
-          <FontAwesomeIcon icon={faUtensils} className='w-[50px] text-yellow-400'/>
+          <FontAwesomeIcon icon={faUtensils} className='lg:w-[50px] md:w-[50px] w-[25px] text-yellow-400'/>
           <p className='lg:text-5xl md:text-5xl text-3xl text-pink-600 mainName font-bold'>Serving Suggestions</p>
         </div>
-        <div className='bg-gray-100 p-[2%] pl-[4%] rounded-sm lg:rounded-xl md:rounded-xl shadow-lg lg:ml-[4%] md:ml-[4%] lg:mr-[4%] md:mr-[4%]'>
+        <div className='bg-gray-100 p-[2%] pl-[4%] rounded-sm lg:rounded-xl lg:mx-[0px] md:mx-[0px] mx-[3%]
+        md:rounded-xl shadow-lg lg:ml-[4%] md:ml-[4%] lg:mr-[4%] md:mr-[4%]'>
           <ul>
           {blog.servingSuggestions.map((e:string[])=>(
             <li className='list-disc'>{e}</li>
@@ -121,12 +125,31 @@ const BlogDetail = ({ params }: { params: { id: string } }) => {
         <div className=' p-[2%] items-center lg:pl-[4%] md:pl-[4%] lg:pr-[4%] md:pr-[4%]'>
         <p className='lg:text-5xl md:text-5xl text-3xl text-pink-600 mainName font-bold'>Tips</p>
         </div>
-        <div className='bg-gray-100 p-[2%] pl-[4%] rounded-sm lg:rounded-xl md:rounded-xl shadow-lg lg:ml-[4%] md:ml-[4%] lg:mr-[4%] md:mr-[4%]'>
+        <div className='bg-gray-100 p-[2%] pl-[4%] rounded-sm lg:rounded-xl md:rounded-xl lg:mx-[0px] md:mx-[0px] mx-[3%]
+        shadow-lg lg:ml-[4%] md:ml-[4%] lg:mr-[4%] md:mr-[4%]'>
           <ul>
           {blog.tips.map((e:string[])=>(
             <li className='list-disc'>{e}</li>
           ))}
           </ul>
+        </div>
+        <div className=' p-[2%] items-center lg:pl-[4%] md:pl-[4%] lg:pr-[4%] md:pr-[4%] mt-[20px] justify-bottom'>
+          <div className='flex gap-[15px]'>
+            <FontAwesomeIcon icon={faQuestionCircle} className='w-[25px] lg:w-[35px] md:w-[35px] text-gray-400'/>
+            <p className='text-gray-400 font-bold lg:text-4xl md:text-4xl text-[22px]'>FAQs</p>
+          </div>
+        </div>
+        {blog.faq.map((e:any)=>(
+                  <div className=' p-[2%] pt-[0px] pb-[0px] lg:ml-[2%] md:ml-[2%] lg:mr-[2%] md:mr-[2%]'>
+                  <div className='bg-gray-100 p-[2%] w-auto rounded-sm lg:rounded-xl md:rounded-xl flex items-center gap-[10px]'>
+                  <FontAwesomeIcon icon={faQuestionCircle} className='w-[20px] lg:w-[25px] md:w-[25px] text-gray-400'/>
+                  <p>{e.question}</p>
+                  </div>
+                  <p className='p-[1%]'>{e.answer}</p>
+                </div>        
+        ))}
+        <div className='p-[2%]'>
+          <CommentSection/>
         </div>
     </div>
   );
